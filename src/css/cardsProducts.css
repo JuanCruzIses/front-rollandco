@@ -1,0 +1,121 @@
+.h2-title{
+    margin-top: 1em;
+}
+
+.card-text:last-child {
+    text-align: justify;
+    align-items: center;
+    align-self: center;
+    display: flex;
+    height: 100%;
+}
+
+div.g-4.row.row-cols-md-2.row-cols-1 {
+    margin-top: 1vh;
+    margin-bottom: 2em;
+}
+
+div.card {
+    box-shadow: 0px 0px 6px;
+    border: none;
+    width: 90%;
+    margin: auto;
+    height: 60vh;
+}
+
+img.card-img-top{
+    height: 55%;
+    object-fit: cover;
+    width: 100%;
+}
+
+div.card-body{
+    padding: 0;
+    height: 40%;
+    position: relative;
+}
+
+.container-shadow {
+    background: black;
+    height: 1.5em;
+    width: 100%;
+    position: absolute;
+    top: -1.5em;
+    opacity: 0.7;
+}
+
+div.card-title.h5{
+    position: absolute;
+    top: -1.2em;
+    color: white;
+    margin-left: 0.2em;
+}
+
+p.card-text{
+    margin: 0;
+    font-size: 1em;
+    text-align: justify;
+    padding: 0 0.5em;
+}
+
+@media (min-width:425px){
+div.card{
+    height: 70vh;
+}
+
+img.card-img-top{
+    height: 65%;
+}
+
+.container-shadow{
+    height: 2em;
+    top: -2em;
+}
+
+div.card-title.h5{
+    font-size: 1.5em;
+}
+}
+
+
+@media (min-width:768px){
+img.card-img-top {
+    object-fit: cover;
+    width: 100%;
+    height: 62%;
+}
+
+div.card{
+    height: 60vh;
+}
+
+div.card-title.h5{
+    font-size: 1.8em;
+}
+
+p.card-text{
+    font-size: 1.1em;
+}
+
+}
+
+@media (min-width: 1000px){
+div.g-4.row.row-cols-md-2.row-cols-1 {
+    margin-top: 1vh;
+    margin-top: -4em;
+    justify-content: space-evenly;
+}
+
+div.card{
+    height: 80%;
+}
+
+.row-cols-md-2>* {
+    flex: 0 0 auto;
+    width: 50%;
+    width: 33%;
+    align-items: center;
+    display: flex
+}
+
+}

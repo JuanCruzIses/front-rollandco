@@ -1,0 +1,54 @@
+.container-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 0.5em 2em;
+}
+
+.p-user{
+    width: 100%;
+    margin: 0;
+    border: 1px solid black;
+}
+
+.p-info{
+    width: 50%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    margin: 0;
+    display: flex;
+    padding: 0em;
+    flex-grow: 1;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 3em;
+}
+
+.form-order-detail{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 3px;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.container-option{
+    display: flex;
+    width: 50%;
+}
+
+.label-checkbox.form-label{
+    width: 80%;
+    padding: 0 0 0 1em ;
+}
+
+.submit-button-orderDetail{
+    bottom: 0;
+    width: 90%;
+    margin: 0.5em auto 0;
+}

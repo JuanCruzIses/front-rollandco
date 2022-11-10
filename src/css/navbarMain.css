@@ -1,0 +1,130 @@
+nav.navbar.navbar-expand.navbar-dark{
+    height: 15vh;
+}
+
+.button-menu{
+    color: #d5b367;
+    font-size: 1.3em;
+}
+
+a.navbar-brand{
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+img.logoRoll{
+    width: 100%;
+}
+
+
+button.navbar-toggler{
+    border: none;
+}
+
+div.me-auto.navbar-nav{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 0.5em;
+}
+
+a.nav-link{
+    width: 100%;
+    text-align: left;
+    padding-left: 1em;
+}
+
+a.nav-link a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-dark{
+    --bs-navbar-color: white;
+    --bs-navbar-active-color: #fff;
+    --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: rgba(255, 255, 255, 0.25);
+    --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px){
+span.navbar-toggler-icon{
+    font-size: 1.4em;
+}
+
+img.logoRoll{
+    width: 80%;
+}
+
+.button-menu{
+    font-size: 1.7em;
+}
+
+a.navbar-brand{
+        width: 15%;
+}
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    margin: 0;
+    width: 100%;
+}
+
+a.nav-link{
+    width: 25%;
+    font-size: 1.5em;
+    text-align: center;
+    padding-left: 0;}
+
+}
+
+@media (min-width: 1024px){
+.navbar-dark{
+    height: auto;
+    padding-bottom: 0;
+}
+
+div.container{
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+div.me-auto.navbar-nav {
+    margin: 0;
+    align-items: flex-end;
+    display: flex;
+}
+
+.nav-link{
+    padding-bottom: 0;
+}
+
+.navbar-collapse.collapse{
+    position: absolute;
+    bottom: 0em;
+    width: 100vw;
+}
+
+img.logoRoll {
+    width: 65%;
+}
+
+a.nav-link{
+    font-size: 1.2em
+}
+
+h3.banner-welcome{
+    top: -0.25em;
+    font-size: 3em;
+}
+
+h3.effect-blur{
+    height: 2em;
+}
+
+}

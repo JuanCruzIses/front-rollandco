@@ -1,0 +1,75 @@
+.container-navigate-buttons{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.button-navigate-dashboard{
+    align-items: center;
+    display: flex;
+    height: 3.2em;
+    margin: 0.5em;
+    border: none;
+    border-radius: 0.3em;
+    color: white;
+    padding: 0.1em 0.4em;
+    background-color: #212529;
+    text-decoration: none;
+}
+
+#button-dashboard{
+    flex-grow: 7;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+.button-navigate-dashboard.active{
+    background: #212529;
+    color: #d5b367;
+}
+
+.detail-button{
+    border: none;
+    background: none;
+    text-decoration: underline;
+    color: blue;
+}
+
+.not-reading{
+    color: red;
+    font-weight: 600;
+}
+
+
+.not-reading{
+    color: red;
+    font-weight: 600;
+    margin: 0;
+}
+
+.reading{
+    color: green;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+#button-dashboard{
+    margin-left: 8em;
+    margin-right: 8em;
+}
+
+.container-navigate-buttons{
+    justify-content: space-evenly;
+}
+
+.button-navigate-dashboard {
+    width: 32%;
+    justify-content: center;
+}
+}
+
+

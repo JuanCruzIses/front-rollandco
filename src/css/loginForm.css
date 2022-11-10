@@ -1,0 +1,144 @@
+/*------- Register form ------*/
+.input-group.has-validation{
+    width: 80%;
+    margin: auto;
+}
+
+.login{
+    margin-top: 0.5em;
+}
+
+.input-group.has-validation{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.input-group-text{
+display: none;}
+
+.input-email.form-control{
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+/*------- Register form ------*/
+.form-label{
+    width: 100%;
+    padding-left: 1em;
+}
+
+.form-group-login{
+    padding-bottom: 1.2em;
+}
+
+.page-title{
+    padding-left: 0;
+    margin-bottom: 1em;
+}
+
+form{
+    width: 90%;
+    margin: 8vh auto;
+}
+
+.form-control{
+    width: 80%;
+    margin: auto;
+}
+
+label.form-label{
+    text-align: left;
+    padding-left: 2em;
+}
+
+.form-group-login div{
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+.container-errors p{
+    margin: 0 auto 1em;
+    color: red;
+    font-weight: 500;
+}
+
+p{
+    margin-top: 3em;
+    text-align: center;
+}
+
+@media (min-width:768px){
+.page-title {
+    padding-left: 0;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+}
+
+label.form-label{
+    font-size: 1.3em;
+    padding-left: 5em;
+}
+
+.form-label{
+    text-align: left;
+    padding-left: 7em;
+}
+
+.form-group-login{
+    margin-bottom: 2em!important;
+}
+
+input.form-control{
+    width: 70%;
+    font-size: 1em;
+}
+
+.form-group-login div{
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+div.input-group.has-validation{
+    width: 70%;
+}
+
+p{
+    font-size: 1.15em;
+}
+}
+
+@media (min-width: 1024px){
+h3{
+    margin-bottom: 2em;
+}
+
+.btn.btn-primary{
+    width: auto;
+    font-size: 1.2em;
+}
+
+.form-group-login {
+    margin-bottom: 2rem!important;
+}
+
+.input-group-text {
+    width: 7%;
+}
+
+input.form-control {
+    width: 60%;
+}
+
+label.form-label {
+    padding-left: 11em;
+}
+
+
+
+div.input-group.has-validation{
+    width: 60%;
+}
+
+}
