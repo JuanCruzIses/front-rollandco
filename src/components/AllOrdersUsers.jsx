@@ -5,12 +5,13 @@ import NavbarMain from './NavbarMain';
 import ButtonsNavigateDashboard from './ButtonsNavigateDashboard';
 import Cookies from 'universal-cookie'
 import '../css/allOrdersUsers.css'
+import { Link } from 'react-router-dom'
 
 function AllOrdersUsers() {
     const cookies = new Cookies()
     let captureParams = useParams()
     useEffect(() => {
-        if (cookies.get('rol_id') == 2) {
+        if (cookies.get('rol_id') != 1) {
           window.location.href = '/'
         }
       })
@@ -50,6 +51,7 @@ function AllOrdersUsers() {
         <Table  bordered hover responsive>
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Cantidad</th>
                     <th>Fecha</th>
                     <th>Precio</th>
@@ -61,9 +63,14 @@ function AllOrdersUsers() {
                     <tr
                     key={`tr-${i}`}
                     >
+                        <td>
+                            <Link to={`/admin/orders/${order.id}`}>
+                                {order.id}
+                            </Link>
+                        </td>
                         <td>{order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll }</td>
                         <td>{order.fecha}</td>
-                        <td>${185 * (order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll)}</td>
+                        <td>${order.precio * (order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll)}</td>
                     </tr>
                 ))
                 }

@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard'
 import BodyAllOrders from './components/BodyAllOrders'
 import BodyAllUsers from './components/BodyAllUsers'
 import OrderDetail from './pages/OrderDetail'
+import NotFound from './pages/Dashboard'
 
 import { Routes, Route, Switch } from 'react-router-dom'
 import AllOrdersUsers from './components/AllOrdersUsers';
@@ -26,6 +27,7 @@ function App() {
           <Route path='/admin/users' element={<BodyAllUsers />}></Route>
           <Route path='/admin/orders/:id' element={<OrderDetail />}></Route>
           <Route path='/admin/users/orders/:id' element={<AllOrdersUsers/>}></Route>
+          <Route path='*' element={<NotFound/>}></Route>
        </Routes>
     </div>
   );

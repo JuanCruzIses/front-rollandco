@@ -11,7 +11,8 @@ function Dashboard(){
     const cookies = new Cookies()
 
     useEffect(() => {
-        if (cookies.get('rol_id') == 2) {
+        console.log(cookies.get('rol_id'))
+        if (cookies.get('rol_id') != 1) {
           window.location.href = '/'
         }
       })

@@ -52,8 +52,6 @@ const RegisterForm = ()=>{
             body: JSON.stringify(valores)
           })
           const data = await response.json();
-          console.log(data)
-          console.log(data.meta.status)
           if(data.meta.status == 200){    
             window.location.href = '/login'
           } else {

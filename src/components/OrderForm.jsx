@@ -26,7 +26,9 @@ function OrderForm() {
     const [products, setProducts] = useState([])
     const [precio, setPrecio] = useState(0)
     const [precioParcial, setPrecioParcial] = useState(0)
-   
+    
+    
+    let cantidad = useRef(0)
     let input = useRef()
     // let partialCost = useRef()
     // let incrementButton = useRef()
@@ -64,26 +66,28 @@ function OrderForm() {
         }
     }
 
-    // let blur = (param) =>{
-    //     let {value, id} = param.target
-    //     console.log(value, id)
-    //     setPrecioParcial(value*products[0].precio)
-    //     setPrecio(precio + value*products[0].precio)
-    //     console.log(<Form.Control/>)
-    // }
-
-    const [cantidad, setCantidad] = useState({})
-
-    let selectItem = (e)=>{
-        // alert('')
-        // this.setState({selectedItem:item.name})
-        let name = e.relatedTarget.id
-        let value = e.target.value
-        setCantidad({name : value })
-        console.log(name)
-        // console.log(item.target)
-        
+    let blur = (e) =>{
+        console.log(e.relatedTarget.value)
+        let inputs = document.querySelectorAll('.quantity-button')
+        console.log(inputs[0].id)
+        for(let i = 0; i < inputs.length; i++){
+            // console.log(inputs[i].value)
+            // cantidad.current = (Number(cantidad.current) + Number(inputs[i].value))
+            // console.log(cantidad.current)
+            // console.log(input.value*products[0].precio)
+            // setPrecio(precio + input.value*products[0].precio)
+        }
     }
+
+  
+    // let selectItem = (e)=>{
+    //     let name = e.relatedTarget.id
+    //     let value = e.target.value
+    //     setCantidad({name : value })
+    //     console.log(name)
+    //     // console.log(item.target)
+        
+    // }
     return (
         <Formik
             initialValues={({
@@ -94,7 +98,7 @@ function OrderForm() {
                 sendOrder(valores)
             }}
         >
-        {( {values, handleSubmit, handleChange} )=>(
+        {( {values, handleSubmit, handleChange, isSubmitting} )=>(
 
             <Form noValidate onSubmit={handleSubmit} >
                 <h3>Hacenos tu pedido!</h3>
@@ -121,7 +125,7 @@ function OrderForm() {
                                     className='quantity-button'
                                     type="number"
                                     onChange={handleChange}
-                                    onBlur={(e)=>selectItem(e)}
+                                    onBlur={(e) =>blur(e)}
                                     />
 
                                 {/* <button
@@ -169,7 +173,8 @@ function OrderForm() {
                     <h6>{msgOrder}</h6>
                     <Link to="/" ><p className='retun-home'>Volver a inicio</p></Link>    
                 </div> : 
-                <Button type="submit">Enviar</Button>
+                <Button type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Enviando...' : 'Enviar'} </Button>
                 }
                 </Form>
         )}

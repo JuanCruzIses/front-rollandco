@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom'
 
 function BodyAllUsers() {
     const cookies = new Cookies()
-
+    
     useEffect(() => {
-        if (cookies.get('rol_id') == 2) {
-          window.location.href = '/'
+        console.log(cookies.get('rol_id'))
+        if (cookies.get('rol_id') != 1) {
+            window.location.href = '/'
         }
-      })
+    })
 
     useEffect(() => {
         try {
@@ -29,38 +30,38 @@ function BodyAllUsers() {
 
     const users = useRef([])
     const [usuarios, setUsuarios] = useState()
-    
+
     return (
         <>
-        <NavbarMain/>
-        <ButtonsNavigateDashboard/>
-        <Table  bordered hover responsive>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Usuario</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                {usuarios && usuarios.map((usuario, i) => (
-                    <tr
-                    key={`tr-${i}`}
-                    >
-                    <Link className='redirect-detail-order' to={`/admin/users/orders/${usuario.id}`}>
-                        <td>{usuario.id}</td>
-                    </Link>
-                        <td>{usuario.nombre}</td>
-                        <td>{usuario.email}</td>
-                        <td>{usuario.telefono}</td>
+            <NavbarMain />
+            <ButtonsNavigateDashboard />
+            <Table bordered hover responsive>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
                     </tr>
-                ))
-                }
+                </thead>
+                <tbody>
 
-            </tbody>
-        </Table>
+                    {usuarios && usuarios.map((usuario, i) => (
+                        <tr
+                            key={`tr-${i}`}
+                        >
+                            <Link className='redirect-detail-order' to={`/admin/users/orders/${usuario.id}`}>
+                                <td>{usuario.id}</td>
+                            </Link>
+                            <td>{usuario.nombre}</td>
+                            <td>{usuario.email}</td>
+                            <td>{usuario.telefono}</td>
+                        </tr>
+                    ))
+                    }
+
+                </tbody>
+            </Table>
         </>
     );
 }

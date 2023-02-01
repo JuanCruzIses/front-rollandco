@@ -1,12 +1,20 @@
 import NavbarMain from '../components/NavbarMain'
-import BodyDashboard from '../components/BodyDashboard'
 import ButtonsNavigateDashboard from '../components/ButtonsNavigateDashboard'
 import '../css/dashboard.css'
 import React, { useState, useEffect, useRef } from 'react';
 import BodyOrderDetail from '../components/BodyOrderDetail';
+import Cookies from 'universal-cookie'
 
 
 function OrderDetail(){
+    const cookies = new Cookies()
+    useEffect(() => {
+        console.log(cookies.get('rol_id'))
+        if (cookies.get('rol_id') != 1) {
+          window.location.href = '/'
+        }
+      })
+    
     return(
         <>
         <NavbarMain/>

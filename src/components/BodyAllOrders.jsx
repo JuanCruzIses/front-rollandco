@@ -12,10 +12,11 @@ function BodyAllOrders() {
     const cookies = new Cookies()
 
     useEffect(() => {
-        if (cookies.get('rol_id') == 2) {
-          window.location.href = '/'
+        console.log(cookies.get('rol_id'))
+        if (cookies.get('rol_id') != 1) {
+            window.location.href = '/'
         }
-      })
+    })
 
     useEffect(() => {
         try {
@@ -29,7 +30,7 @@ function BodyAllOrders() {
             setOrdenes(0)
         }
     }, [])
-    
+
     return (
         <>
             <NavbarMain />
@@ -51,25 +52,25 @@ function BodyAllOrders() {
                     </tr>
                 </thead>
                 <tbody>
-                {orders.current.map((orden, index) => (
-                    // 
-                    <tr key={index}>
-                        <Link className='redirect-detail-order' to={`/admin/orders/${orden.id}`}>
-                        <td>{orden.id_usuarios}</td>
-                        </Link>
-                        <td className='td'>{orden.cinnamon_roll}</td>
-                        <td className='td'>{orden.almendras_roll}</td>
-                        <td className='td'>{orden.pistacho_roll}</td>
-                        <td className='td'>{orden.nutella_roll}</td>
-                        <td className='td'>{orden.kinder_roll}</td>
-                        <td className='td'>{orden.fenix_roll}</td>
-                        <td className='td'>{orden.oreo_roll}</td>
-                        <td className='td'>{orden.jamon_roll}</td>
-                        <td className='td'>{orden.portobello_roll}</td>
-                        <td className='td'>{orden.fecha}</td>
-                    </tr>
-                ))}
-                </tbody> 
+                    {orders.current.map((orden, index) => (
+                        // 
+                        <tr key={index}>
+                            <Link className='redirect-detail-order' to={`/admin/orders/${orden.id}`}>
+                                <td>{orden.id_usuarios}</td>
+                            </Link>
+                            <td className='td'>{orden.cinnamon_roll}</td>
+                            <td className='td'>{orden.almendras_roll}</td>
+                            <td className='td'>{orden.pistacho_roll}</td>
+                            <td className='td'>{orden.nutella_roll}</td>
+                            <td className='td'>{orden.kinder_roll}</td>
+                            <td className='td'>{orden.fenix_roll}</td>
+                            <td className='td'>{orden.oreo_roll}</td>
+                            <td className='td'>{orden.jamon_roll}</td>
+                            <td className='td'>{orden.portobello_roll}</td>
+                            <td className='td'>{orden.fecha}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </Table>
         </>
     );
