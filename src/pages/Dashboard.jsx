@@ -11,7 +11,6 @@ function Dashboard(){
     const cookies = new Cookies()
 
     useEffect(() => {
-        console.log(cookies.get('rol_id'))
         if (cookies.get('rol_id') != 1) {
           window.location.href = '/'
         }
@@ -20,7 +19,7 @@ function Dashboard(){
     
     useEffect(() => {
         try {
-            fetch('https://back-rollandco-production.up.railway.app/api/v1/admin/orders')
+            fetch('https://back-rollandco-production.up.railway.app/api/admin/orders')
                 .then(response => response.json())
                 .then((json) => {
                     orders.current = json.data

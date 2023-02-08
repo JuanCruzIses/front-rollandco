@@ -9,7 +9,6 @@ import Cookies from 'universal-cookie'
 function OrderDetail(){
     const cookies = new Cookies()
     useEffect(() => {
-        console.log(cookies.get('rol_id'))
         if (cookies.get('rol_id') != 1) {
           window.location.href = '/'
         }
