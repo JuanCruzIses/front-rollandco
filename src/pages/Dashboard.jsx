@@ -20,7 +20,7 @@ function Dashboard(){
     
     useEffect(() => {
         try {
-            fetch('http://localhost:3001/api/v1/admin/orders')
+            fetch('https://back-rollandco-production.up.railway.app/api/v1/admin/orders')
                 .then(response => response.json())
                 .then((json) => {
                     orders.current = json.data
