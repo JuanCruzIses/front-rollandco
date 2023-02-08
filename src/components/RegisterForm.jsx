@@ -54,14 +54,14 @@ const RegisterForm = ()=>{
           })
           const data = await response.json();
           console.log(data)
-      //     if(data.meta.status == 200){    
-      //       window.location.href = '/login'
-      //     } else {
-      //       console.log('else')
-      //       setError(data.meta.msg)
-      //     }
-      // } else{
-      //   setError('Por favor verifique los datos ingresados')
+          if(data.meta.status == 200){    
+            window.location.href = '/login'
+          } else {
+            console.log('else')
+            setError(data.meta.msg)
+          }
+      } else{
+        setError('Por favor verifique los datos ingresados')
       }
     }
 
