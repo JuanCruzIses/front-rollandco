@@ -8,7 +8,7 @@ function CardsProducts() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/v1/products')
+    fetch('https://back-rollandco-production.up.railway.app/api/products')
     .then(response => response.json())
     .then((json) =>{
       setProducts(json.data)
