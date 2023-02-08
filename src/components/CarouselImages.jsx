@@ -12,10 +12,11 @@ function CarouselImages() {
 
   useEffect(() => {
     fetch('https://back-rollandco-production.up.railway.app/api/products')
-        .then(response => response.json())
-        .then((json) => {
-            setProducts(json.data)
-        })
+        .then(response => console.log(response))
+        //   response.json())
+        // .then((json) => {
+        //     setProducts(json.data)
+        // })
 }, [])
 
   
