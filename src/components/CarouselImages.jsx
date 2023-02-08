@@ -22,7 +22,7 @@ function CarouselImages() {
   return (
     <div className='container-carousell'>
     <h3 className='effect-blur'><div className=""></div></h3>
-    { userName !== undefined ? 
+    { userName != undefined ? 
       <h3 className='banner-welcome'>Bienvenido {userName}!</h3> : <h3 className='banner-welcome'>Bienvenido a Roll & CO</h3>
      }
     <Carousel fade>

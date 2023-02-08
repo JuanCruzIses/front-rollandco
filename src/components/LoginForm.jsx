@@ -36,10 +36,10 @@ const LoginForm = () => {
             })
             const data = await response.json();
             if(data.data){    
-                cookies.set('id', data.data.id, {path: '/'})
-                cookies.set('nombre', data.data.nombre, {path: '/'})
-                cookies.set('email', data.data.email, {path: '/'})
-                cookies.set('rol_id', data.data.rol_id, {path: '/'})
+                cookies.set('id', data.data[0].id, {path: '/'})
+                cookies.set('nombre', data.data[0].nombre, {path: '/'})
+                cookies.set('email', data.data[0].email, {path: '/'})
+                cookies.set('rol_id', data.data[0].rol_id, {path: '/'})
                 window.location.href='/'
             } else {
                 setError(data.msg)

@@ -42,8 +42,9 @@ const RegisterForm = ()=>{
   
 
      const sendOrder = async (valores) => {
+      console.log(valores)
       if ((valores.contrasenia === valores.confirmContrasenia) && valores.email != undefined) {
-        let response = await fetch('http://localhost:3001/api/v1/users/register',
+        let response = await fetch('https://back-rollandco-production.up.railway.app/api/users/register',
           {
             method: 'POST',
             headers: { 
@@ -52,14 +53,15 @@ const RegisterForm = ()=>{
             body: JSON.stringify(valores)
           })
           const data = await response.json();
-          if(data.meta.status == 200){    
-            window.location.href = '/login'
-          } else {
-            console.log('else')
-            setError(data.meta.msg)
-          }
-      } else{
-        setError('Por favor verifique los datos ingresados')
+          console.log(data)
+      //     if(data.meta.status == 200){    
+      //       window.location.href = '/login'
+      //     } else {
+      //       console.log('else')
+      //       setError(data.meta.msg)
+      //     }
+      // } else{
+      //   setError('Por favor verifique los datos ingresados')
       }
     }
 
