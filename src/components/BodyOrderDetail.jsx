@@ -38,7 +38,6 @@ function BodyOrderDetail(){
             fetch(`https://back-rollandco-production.up.railway.app/api/admin/orders/${params.id}`)
             .then(response => response.json())
             .then((json) => {
-                console.log(json)
                 setOrder(json.data[0])
                 setLeido(json.data.leido)
                 setPagado(json.data.pagado)
