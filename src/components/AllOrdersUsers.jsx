@@ -32,7 +32,7 @@ function AllOrdersUsers() {
     }, [])
     useEffect(() => {
         try {
-            fetch(`http://localhost:3001/api/v1/admin/users/${captureParams.id}`)
+            fetch(`http://localhost:3001/api/admin/users/${captureParams.id}`)
                 .then(response => response.json())
                 .then((json) => {
                    setUser(json.data)
