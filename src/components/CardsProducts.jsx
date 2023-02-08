@@ -11,6 +11,7 @@ function CardsProducts() {
     fetch('https://back-rollandco-production.up.railway.app/api/products')
     .then(response => response.json())
     .then((json) =>{
+      console.log(json.data)
       setProducts(json.data)
     })
 }, [])
