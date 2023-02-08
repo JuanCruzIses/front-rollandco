@@ -21,7 +21,7 @@ function AllOrdersUsers() {
 
     useEffect(() => {
         try {
-            fetch(`http://localhost:3001/api/v1/admin/users/orders/${captureParams.id}`)
+            fetch(`https://back-rollandco-production.up.railway.app/api/admin/users/orders/${captureParams.id}`)
                 .then(response => response.json())
                 .then((json) => {
                     setOrders(json.data)

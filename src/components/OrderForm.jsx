@@ -12,8 +12,8 @@ import { Formik } from 'formik'
 
 function OrderForm() {
     useEffect(() => {
-        fetch('http://localhost:3001/api/v1/products')
-            .then(response => response.json())
+        fetch('https://back-rollandco-production.up.railway.app/api/products')
+        .then(response => response.json())
             .then((json) => {
                 setProducts(json.data)
             })
@@ -49,7 +49,7 @@ function OrderForm() {
     })
     
     const sendOrder = async (valores) => {
-        let response = await fetch('http://localhost:3001/api/v1/products/order',
+        let response = await fetch('http://localhost:3001/api/products/order',
             {
                 method: 'POST',
                 headers: {
@@ -101,20 +101,13 @@ function OrderForm() {
         {( {values, handleSubmit, handleChange, isSubmitting} )=>(
 
             <Form noValidate onSubmit={handleSubmit} >
-                <h3>Hacenos tu pedido!</h3>
+                <h3>¡Hace tu pedido!</h3>
                 <Row className="mb-3">
                     <h6>Los pedidos se tomaran hasta las 19 hs. del dia anterior</h6>
                     {products.map((products, i) => (
                         <Form.Group key={`form-${i}`} as={Col} md="4" >
                             <Form.Label className='form-label-order'>{products.nombre}</Form.Label>
                             <div className='quantity-container'>
-                                {/* <button
-                                    ref={decrementButton}
-                                    className='decrement-button'
-                                    onClick={restar}
-                                    key={`increment-${i}`}
-                                    >-</button> */}
-
                                 <Form.Control
                                     key={`input-${i}`}
                                     id={`input-${i}`}
@@ -127,24 +120,7 @@ function OrderForm() {
                                     onChange={handleChange}
                                     onBlur={(e) =>blur(e)}
                                     />
-
-                                {/* <button
-                                    className='increment-button'
-                                    ref={incrementButton}
-                                    key={`decrement-${i}`}
-                                    id={`decrement-${i}`}
-                                    onClick={sumar}
-                                    onChange={handleChange}
-                                >+</button> */}
                             </div>
-                            {/* <p
-                            key={`p-${i}`}
-                            id={`p-${i}`}
-                            ref={partialCost}
-                            className='spent-unitary'
-                            >
-                                ${precioParcial}
-                            </p> */}
                             <Form.Control.Feedback></Form.Control.Feedback>
                         </Form.Group>
                     ))}

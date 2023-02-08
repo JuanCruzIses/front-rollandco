@@ -17,7 +17,7 @@ function BodyAllUsers() {
 
     useEffect(() => {
         try {
-            fetch('http://localhost:3001/api/v1/admin/users')
+            fetch('https://back-rollandco-production.up.railway.app/api/admin/users')
                 .then(response => response.json())
                 .then((json) => {
                     users.current = json.data

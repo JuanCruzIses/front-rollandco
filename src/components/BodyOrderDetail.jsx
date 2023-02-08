@@ -35,7 +35,7 @@ function BodyOrderDetail(){
 
     useEffect(()=>{
         try{
-            fetch(`http://localhost:3001/api/v1/admin/orders/${params.id}`)
+            fetch(`https://back-rollandco-production.up.railway.app/api/admin/orders/${params.id}`)
             .then(response => response.json())
             .then((json) => {
                 setOrder(json.data)
@@ -49,7 +49,7 @@ function BodyOrderDetail(){
 
     useEffect(()=>{
         try{
-            fetch(`http://localhost:3001/api/v1/admin/users/${order.id_usuarios}`)
+            fetch(`https://back-rollandco-production.up.railway.app/api/admin/users/${order.id_usuarios}`)
             .then(response => response.json())
             .then((json) => {
                 setUser(json.data)
@@ -60,7 +60,7 @@ function BodyOrderDetail(){
     }, [order])
 
     const sendOrder = async (valores) => {
-        let response = await fetch(`http://localhost:3001/api/v1/admin/orders/${order.id}`,
+        let response = await fetch(`https://back-rollandco-production.up.railway.app/api/admin/orders/${order.id}`,
                {
                    method: 'PUT',
                    headers: {
