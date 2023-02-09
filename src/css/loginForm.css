@@ -34,6 +34,8 @@ display: none;}
 }
 
 .page-title{
+    text-decoration: underline;
+    font-family: 'Roboto slab';
     padding-left: 0;
     margin-bottom: 1em;
 }
@@ -49,6 +51,7 @@ form{
 }
 
 label.form-label{
+    font-family: 'Roboto slab';
     text-align: left;
     padding-left: 2em;
 }

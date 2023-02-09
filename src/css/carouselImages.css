@@ -24,6 +24,8 @@
 }
 
 .banner-welcome {
+    text-decoration: none;
+    font-family: 'Roboto slab';
     position: absolute;
     z-index: 1000;
     color: white;
@@ -98,6 +100,18 @@ div.carousel-item-prev.carousel-item-end.carousel-item{
 }
 
 @media (min-width: 1024px){
+.container-main{
+    height: 75vh;
+}
+
+.effect-blur{
+    position: initial;
+}
+
+.container-carousell {
+    height: 100%;
+}
+
 .effect-blur{
     top: 0.9em;
 }
@@ -113,4 +127,15 @@ div.carousel-item-prev.carousel-item-end.carousel-item{
 button{
     width: 3em;
 }
+
+.carousel-indicators{
+    margin: 1em;
+    top: 0;
+    height: 5%;
+}
+
+.carousel-inner{
+    height: 100%;
+}
+
 }

@@ -1,5 +1,7 @@
 .h2-title{
     margin-top: 1em;
+    font-family: 'Roboto slab';
+    text-decoration: underline;
 }
 
 .card-text:last-child {
@@ -25,7 +27,7 @@ div.card {
 }
 
 div.card:hover{
-    opacity: 0.9;
+    opacity: 0.96;
 }
 
 img.card-img-top{
@@ -50,6 +52,7 @@ div.card-body{
 }
 
 div.card-title.h5{
+    font-family: 'Roboto slab';
     position: absolute;
     top: -1.2em;
     color: white;
@@ -108,10 +111,10 @@ p.card-text{
 .card{
     height: 50vh;
 }
-
+/* 
 .card:hover{
     opacity: 0.95;
-}
+} */
 
 div.g-4.row.row-cols-md-2.row-cols-1 {
     justify-content: space-evenly;

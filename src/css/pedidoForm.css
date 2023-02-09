@@ -3,6 +3,8 @@ h3{
     padding-left: 1em;
     margin-top: 1.5em;
     margin-bottom: 1em;
+    font-family: 'Roboto Slab';
+    text-decoration: underline;
 }
 
 h6{
@@ -17,10 +19,9 @@ h6{
     align-items: center;
 }
 
-/* .form-label{
-    width: 100%;
-    padding-left: 1em; */
-/* } */
+.row>*{
+    font-family: 'roboto slab';
+}
 
 .quantity-container{
     position: relative;

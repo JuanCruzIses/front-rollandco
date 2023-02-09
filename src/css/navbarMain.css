@@ -34,6 +34,7 @@ a.nav-link{
     width: 100%;
     text-align: left;
     padding-left: 1em;
+    font-family: 'Roboto slab';
 }
 
 a.nav-link a{
@@ -84,6 +85,7 @@ a.nav-link{
 .navbar-dark{
     height: auto;
     padding-bottom: 0;
+    padding: 0.2em;
 }
 
 div.container{
@@ -105,6 +107,8 @@ div.me-auto.navbar-nav {
 }
 
 .navbar-collapse.collapse{
+    height: 50%;
+    top: 1.5em;
     position: absolute;
     bottom: 0em;
     width: 100vw;
@@ -119,12 +123,21 @@ a.nav-link{
 }
 
 h3.banner-welcome{
-    top: -0.25em;
-    font-size: 3em;
+    height: 10%;
+    top: 0em;
+    margin: 0;
+    font-size: 2.5em;
 }
 
 h3.effect-blur{
-    height: 2em;
+    position: initial;
+    height: 10%;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel{
+    height: 90%;
 }
 
 }
