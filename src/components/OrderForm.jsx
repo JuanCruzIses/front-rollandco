@@ -101,7 +101,6 @@ function OrderForm() {
             initialValues={({
                 id_usuarios: Number(userId),
                 fecha: dateNow,
-                precio: precio
             })}
             onSubmit={(valores) => {
                 sendOrder(valores)
