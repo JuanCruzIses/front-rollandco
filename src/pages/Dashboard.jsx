@@ -23,6 +23,15 @@ function Dashboard(){
                 .then(response => response.json())
                 .then((json) => {
                     orders.current = json.data
+                    orders.current.map(order =>{
+                        let date = new Date(order.fecha)
+                        let day = date.getDate() + 1
+                        let month = date.getMonth() + 1
+                        let year = date.getFullYear()
+                
+                        let dateNow = `${day}-${month}-${year}`
+                        order.fecha = dateNow
+                    })
                     setOrdenes(orders.current)
                 })
         } catch (error) {

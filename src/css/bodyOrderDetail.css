@@ -4,12 +4,20 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 0.5em 2em;
+    box-shadow: 0px 0px 3px;
+    padding: 1em;
+    border-radius: 5px;
 }
 
 .p-user{
+    border-bottom: 1px solid black;
     width: 100%;
     margin: 0;
-    border: 1px solid black;
+}
+
+h4{
+    font-family: 'roboto slab';
+    text-decoration: underline;
 }
 
 .p-info{
@@ -51,4 +59,15 @@
     bottom: 0;
     width: 90%;
     margin: 0.5em auto 0;
+}
+
+@media (min-width: 760px){
+.container-info{
+    max-width: 75vw;
+    margin: 1em auto;
+}
+
+.form-order-detail{
+    max-width: 75vw;
+}
 }

@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    max-width: 75vw;
+    margin: auto;
 }
 
 .button-navigate-dashboard{
@@ -16,12 +18,18 @@
     padding: 0.1em 0.4em;
     background-color: #212529;
     text-decoration: none;
+    width: 45%;
+    min-width: 100px;
+    justify-content: center;
 }
 
 .table-bordered>:not(caption)>*>* {
     font-family: 'Roboto slab';
 }
-   
+
+.date-column{
+    min-width: 90px;
+}
     
 #button-dashboard{
     flex-grow: 7;
@@ -33,6 +41,7 @@
 }
 
 .button-navigate-dashboard.active{
+    justify-content: center;
     background: #212529;
     color: #d5b367;
 }
@@ -63,13 +72,8 @@
 }
 
 @media (min-width: 768px) {
-#button-dashboard{
-    margin-left: 8em;
-    margin-right: 8em;
-}
-
 .container-navigate-buttons{
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .button-navigate-dashboard {

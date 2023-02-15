@@ -4,3 +4,7 @@ a.redirect-detail-order{
     text-decoration: none;
     padding: 1em;   
 }
+
+.locker-date{
+    min-width: 100px;
+}

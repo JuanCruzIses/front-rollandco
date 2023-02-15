@@ -99,7 +99,7 @@ div.carousel-item-prev.carousel-item-end.carousel-item{
 
 }
 
-@media (min-width: 1024px){
+@media (min-width: 992px){
 .container-main{
     height: 75vh;
 }
