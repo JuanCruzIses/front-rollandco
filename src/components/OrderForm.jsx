@@ -13,7 +13,6 @@ import { Formik } from 'formik'
 function OrderForm() {
 
     const sendOrder = async (valores) => {
-        console.log(valores)
         let response = await fetch('https://back-rollandco-production.up.railway.app/api/products/order',
             {
                 method: 'POST',
@@ -65,7 +64,6 @@ function OrderForm() {
 
 
     let sumatory
-    let precio
     let modifyValue = ((e) => {
         let name = e.target.name
         let value = e.target.value
@@ -83,8 +81,8 @@ function OrderForm() {
         let { almendras_roll, cinnamon_roll, fenix_roll, kinder_roll, jamon_roll, nutella_roll, oreo_roll, pistacho_roll, portobello_roll } = object
         sumatory = almendras_roll + cinnamon_roll + fenix_roll + kinder_roll + jamon_roll + nutella_roll + oreo_roll + pistacho_roll + portobello_roll
         let p = document.getElementsByClassName('cost-number')
-        precio = new Intl.NumberFormat('es-ES').format(products[0].precio * sumatory)
-        p[0].innerText = `$ ${precio}`
+        let precio = new Intl.NumberFormat('es-ES').format(products[0].precio * sumatory)
+        p[0].innerText = `$ ${products[0].precio * sumatory}`
     })
 
 
@@ -99,7 +97,7 @@ function OrderForm() {
     return (
         <Formik
             initialValues={({
-                id_usuarios: Number(userId),
+                id_usuario: Number(userId),
                 fecha: dateNow,
             })}
             onSubmit={(valores) => {
