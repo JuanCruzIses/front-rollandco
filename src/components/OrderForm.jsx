@@ -156,7 +156,7 @@ function OrderForm() {
                         <p className='cost-text'>Costo total:</p>
                         <p
                             className='cost-number'
-                        >${ }</p>
+                        ></p>
                     </div>
 
                     {msgOrder.length !== 0 ?
