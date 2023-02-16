@@ -1,12 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom'
-
+import Pagination from 'react-bootstrap/Pagination';
 
 function List(props) {
-
+    let [page, setPage] = useState(1)
+    let [itemsPerPage, setItemsPerPage] = useState(page*10)
+    let [inicio, setInicio] = useState(0)
     
+    useEffect(()=>{
+        setItemsPerPage(page*10)
+    },[page])
+
     let { orders } = props
+    
+    let itemsForRender = orders.slice(inicio, itemsPerPage)
+    
+    let nextHandler = ()=>{
+        setInicio(itemsPerPage)
+        setPage(page+1)
+        console.log(inicio)
+        console.log(itemsPerPage)
+    }
+    
+    let  prevHandler = ()=>{
+        if(page > 1){
+            setPage(page-1)
+            setInicio(itemsPerPage-20)
+            console.log(inicio)
+            console.log(itemsPerPage)
+        }
+    }
     
     orders.map(order =>{
         let date = new Date(order.fecha)
@@ -16,7 +40,10 @@ function List(props) {
 
         let dateNow = `${day}-${month}-${year}`
     })
+
     return (
+        <>
+
         <Table striped bordered hover responsive>
             <thead>
                 <tr>
@@ -31,7 +58,7 @@ function List(props) {
             </thead>
             <tbody>
 
-                {orders && orders.map((order, i) => (
+                {itemsForRender && itemsForRender.map((order, i) => (
                     <tr
                         key={`tr-${i}`}
                     >
@@ -71,6 +98,12 @@ function List(props) {
 
             </tbody>
         </Table>
+        <Pagination pagination={page} size="sm">
+                <Pagination.Prev onClick={prevHandler} />
+                <Pagination.Item>{page}</Pagination.Item>
+                <Pagination.Next onClick={nextHandler}/>
+            </Pagination>
+        </>
     );
 }
 

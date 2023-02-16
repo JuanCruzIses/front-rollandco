@@ -6,6 +6,10 @@
     margin: auto;
 }
 
+.pagination.pagination-sm{
+    justify-content: center;
+}
+
 .button-navigate-dashboard{
     align-items: center;
     display: flex;
