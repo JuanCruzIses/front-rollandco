@@ -83,7 +83,7 @@ function OrderForm() {
         sumatory = almendras_roll + cinnamon_roll + fenix_roll + kinder_roll + jamon_roll + nutella_roll + oreo_roll + pistacho_roll + portobello_roll
         let p = document.getElementsByClassName('cost-number')
         let precio = new Intl.NumberFormat('es-ES').format(products[0].precio * sumatory)
-        p[0].innerText = `$ ${products[0].precio * sumatory}`
+        p[0].innerText = `$ ${precio}`
     })
 
 

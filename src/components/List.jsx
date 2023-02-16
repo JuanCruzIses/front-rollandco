@@ -24,6 +24,7 @@ function List(props) {
                     <th>Usuario</th>
                     <th>Cantidad</th>
                     <th>Detalle</th>
+                    <th>Precio</th>
                     <th>Leído</th>
                     <th>Pagado</th>
                 </tr>
@@ -44,6 +45,9 @@ function List(props) {
                             >
                                 Detalle
                             </Link >
+                        </td>
+                        <td>
+                        ${new Intl.NumberFormat('es-ES').format(222 * order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll)}
                         </td>
                         <td>
                             {order.leido == false ?
