@@ -100,6 +100,15 @@ function OrderForm() {
             initialValues={({
                 id_usuario: Number(userId),
                 fecha: dateNow,
+                almendras_roll:0,
+                cinnamon_roll:0,
+                pistacho_roll:0,
+                nutella_roll:0,
+                kinder_roll:0,
+                fenix_roll:0,
+                oreo_roll:0,
+                portobello_roll:0,
+                jamon_roll:0
             })}
             onSubmit={(valores) => {
                 sendOrder(valores)
