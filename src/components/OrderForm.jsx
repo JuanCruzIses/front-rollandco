@@ -13,6 +13,7 @@ import { Formik } from 'formik'
 function OrderForm() {
 
     const sendOrder = async (valores) => {
+        console.log(valores)
         let response = await fetch('https://back-rollandco-production.up.railway.app/api/products/order',
             {
                 method: 'POST',

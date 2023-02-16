@@ -35,7 +35,7 @@ function List(props) {
                         key={`tr-${i}`}
                     >
                         <td>{order.fecha}</td>
-                        <td>{order.id_usuarios}</td>
+                        <td>{order.id_usuario}</td>
                         <td>{order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll}</td>
                         <td>
                             <Link

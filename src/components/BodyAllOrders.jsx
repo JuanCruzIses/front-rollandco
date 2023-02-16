@@ -64,7 +64,6 @@ function BodyAllOrders() {
             setUser(null)
         }
     }, [ordenes])
-    // console.log(user)
 
     return (
         <>
@@ -91,7 +90,7 @@ function BodyAllOrders() {
                         <tr key={index}>
                             <td className='td locker-date'>{orden.fecha}</td>
                             <Link className='redirect-detail-order' to={`/admin/orders/${orden.id}`}>
-                                <td>{orden.id_usuarios}</td>
+                                <td>{orden.id_usuario}</td>
                             </Link>
                             <td className='td'>{orden.cinnamon_roll}</td>
                             <td className='td'>{orden.almendras_roll}</td>

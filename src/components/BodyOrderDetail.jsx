@@ -61,7 +61,7 @@ function BodyOrderDetail(){
 
     useEffect(()=>{
         try{
-            fetch(`https://back-rollandco-production.up.railway.app/api/admin/users/${order.id_usuarios}`)
+            fetch(`https://back-rollandco-production.up.railway.app/api/admin/users/${order.id_usuario}`)
             .then(response => response.json())
             .then((json) => {
                 setUser(json.data[0].nombre)
@@ -103,7 +103,7 @@ function BodyOrderDetail(){
                 <p className="p-info"><b>Oreo Roll: </b> {order.oreo_roll}</p>
                 <p className="p-info"><b>Jamon Roll: </b> {order.jamon_roll}</p>
                 <p className="p-info"><b>Portobello Roll: </b> {order.portobello_roll}</p> 
-                <p className="p-info"><b>Valor total: </b> ${order.precio * (order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll)}</p>
+                <p className="p-info"><b>Valor total: </b> ${222 * (order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll)}</p>
                 {order.comentario && <p className="p-user"><b>Comentario: </b> {order.comentario}</p>}
             </>
             }
