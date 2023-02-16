@@ -61,7 +61,6 @@ function OrderForm() {
         oreo_roll: 0,
         pistacho_roll: 0,
         portobello_roll: 0,
-        comentario:''
     })
 
 
@@ -109,7 +108,8 @@ function OrderForm() {
                 fenix_roll:0,
                 oreo_roll:0,
                 portobello_roll:0,
-                jamon_roll:0
+                jamon_roll:0,
+                comentario:''
             })}
             onSubmit={(valores) => {
                 sendOrder(valores)
