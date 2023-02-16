@@ -60,7 +60,8 @@ function OrderForm() {
         nutella_roll: 0,
         oreo_roll: 0,
         pistacho_roll: 0,
-        portobello_roll: 0
+        portobello_roll: 0,
+        comentario:''
     })
 
 
