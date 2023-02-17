@@ -5,6 +5,7 @@ import ButtonsNavigateDashboard from './ButtonsNavigateDashboard';
 import Cookies from 'universal-cookie'
 import { Link } from 'react-router-dom'
 import '../css/bodyAllOrders.css'
+import Pagination from 'react-bootstrap/Pagination';
 
 function BodyAllOrders() {
     const arrayUser = useRef([])
@@ -42,6 +43,8 @@ function BodyAllOrders() {
             setOrdenes(0)
         }
     }, [])
+   
+
 
     useEffect(()=>{
         try{
@@ -65,6 +68,31 @@ function BodyAllOrders() {
         }
     }, [ordenes])
 
+    let [page, setPage] = useState(1)
+    let [itemsPerPage, setItemsPerPage] = useState(page*10)
+    let [inicio, setInicio] = useState(0)
+    
+    useEffect(()=>{
+        setItemsPerPage(page*10)
+    },[page])    
+
+
+    let itemsForRender = orders.current.slice(inicio, itemsPerPage)
+    
+    let nextHandler = ()=>{
+        if(orders[itemsPerPage] !== undefined){
+            setInicio(itemsPerPage)
+            setPage(page+1)
+        }
+    }
+    
+    let  prevHandler = ()=>{
+        if(page > 1){
+            setPage(page-1)
+            setInicio(itemsPerPage-20)
+        }
+    }
+
     return (
         <>
             <NavbarMain />
@@ -86,7 +114,7 @@ function BodyAllOrders() {
                     </tr>
                 </thead>
                 <tbody>
-                    {orders.current.map((orden, index) => (
+                    {itemsForRender.map((orden, index) => (
                         <tr key={index}>
                             <td className='td locker-date'>{orden.fecha}</td>
                             <Link className='redirect-detail-order' to={`/admin/orders/${orden.id}`}>
@@ -105,6 +133,11 @@ function BodyAllOrders() {
                     ))}
                 </tbody>
             </Table>
+            <Pagination pagination={page} size="sm">
+                <Pagination.Prev onClick={prevHandler} />
+                <Pagination.Item>{page}</Pagination.Item>
+                <Pagination.Next onClick={nextHandler}/>
+            </Pagination>
         </>
     );
 }

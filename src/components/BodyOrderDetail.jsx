@@ -20,11 +20,9 @@ function BodyOrderDetail(){
     
     let toggleCheckbox = ()=>{
         if(leido == 0){
-            console.log('checkbox 1 es true')
             setLeido(1)
             
         } else {
-            console.log('checkbox 1 es false')
             setLeido(0)
         }
     }
@@ -72,15 +70,22 @@ function BodyOrderDetail(){
     }, [order])
 
     const sendOrder = async (valores) => {
-        let response = await fetch(`http://localhost:3000/api/admin/orders/${order.id}`,
-               {
-                   method: 'PUT',
-                   headers: {
-                       'Content-Type': 'application/json;charset=utf-8'
-                   },
+        try{
+
+            await fetch(`https://back-rollandco-production.up.railway.app/api/admin/orders/${order.id}`,
+            {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
                 body: JSON.stringify(valores)
             })
-            window.location.href=`/admin/orders/${order.id}`
+            .then(()=>{
+                window.location.href=`/admin/orders/${order.id}`
+            })
+        } catch(error){
+            
+        }
     }
     
     return(

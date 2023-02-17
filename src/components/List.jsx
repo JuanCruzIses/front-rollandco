@@ -13,14 +13,14 @@ function List(props) {
     },[page])
 
     let { orders } = props
-    
+
     let itemsForRender = orders.slice(inicio, itemsPerPage)
     
     let nextHandler = ()=>{
-        setInicio(itemsPerPage)
-        setPage(page+1)
-        console.log(inicio)
-        console.log(itemsPerPage)
+        if(orders[itemsPerPage] !== undefined){
+            setInicio(itemsPerPage)
+            setPage(page+1)
+        }
     }
     
     let  prevHandler = ()=>{
@@ -74,7 +74,7 @@ function List(props) {
                             </Link >
                         </td>
                         <td>
-                        ${new Intl.NumberFormat('es-ES').format(222 * order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll)}
+                        ${new Intl.NumberFormat('es-ES').format(222 * (order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll))}
                         </td>
                         <td>
                             {order.leido == false ?

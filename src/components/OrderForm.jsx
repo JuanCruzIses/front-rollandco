@@ -89,7 +89,7 @@ function OrderForm() {
 
     let date = new Date()
 
-    let day = date.getDate() + 1
+    let day = date.getDate() 
     let month = date.getMonth() + 1
     let year = date.getFullYear()
 
