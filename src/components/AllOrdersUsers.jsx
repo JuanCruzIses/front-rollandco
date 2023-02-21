@@ -84,7 +84,7 @@ function AllOrdersUsers() {
                         </td>
                         <td>{order.fecha}</td>
                         <td>{order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll }</td>
-                        <td>${order.precio * (order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll)}</td>
+                        <td>${222 * (order.almendras_roll + order.cinnamon_roll + order.fenix_roll + order.jamon_roll + order.kinder_roll + order.nutella_roll + order.oreo_roll + order.pistacho_roll + order.portobello_roll)}</td>
                     </tr>
                 )) : <tr><td colSpan={4}>Aun no ha realizado ningun pedido</td></tr>
                 }
